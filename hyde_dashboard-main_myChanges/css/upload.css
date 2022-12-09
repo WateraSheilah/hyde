@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(247, 250, 240);
+    color: var(--color-dark );
+   
+}
+
+.wrapper .main-container main .wrap{
+    padding: 50px 50px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 10px auto;
+    max-width: 850px;
+}
+.wrapper .main-container main h4{
+    letter-spacing: -1px;
+    font-weight: 400;
+}
+.wrapper .main-container main .img{
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.wrapper .main-container main #img-section p,#deactivate p{
+    font-size: 12px;
+    color: #0000D1;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.wrapper .main-container main #img-section b,#img-section button,#deactivate b{
+    font-size: 14px; 
+}
+
+.wrapper .main-container main label{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0000D1;
+    padding-left: 3px;
+}
+
+.wrapper .main-container main .form-control{
+    border-radius: 10px;
+}
+
+.wrapper .main-container main input[placeholder]{
+    font-weight: 500;
+    color: #0000D1;
+}
+.wrapper .main-container main .form-control:focus{
+    box-shadow: none;
+    border: 1.5px solid #0779e4;
+}
+
+.wrapper .main-container main .button{
+    background-color: #fff;
+    color: #FF8300;
+}
+.wrapper .main-container main .button:hover{
+    background-color: #FF8300;
+    color: #fff;
+}
+.wrapper .main-container main .btn-primary{
+    background-color: #FF8300;
+}
+
+@media(max-width:576px){
+    .wrap{
+        padding: 25px 20px;
+    }
+    #deactivate{
+        line-height: 18px;
+    }
+}
