@@ -1,377 +1,441 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <!--  authetication start-->
-    <script type = "text/javascript" >
-     function preback() {window.history.forward();}
-     setTimeout("preback()", 0);
-     window.onunload = function(){null;};
- </script>
- <!--  authetication end-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add User</title>
+<link rel="stylesheet" href="css/dash.css"/>
 
- <meta charset="utf-8">
- <title>BABA TV</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="https:////cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+color: #404E67;
+/* background: blue; */
+font-family: 'Open Sans', sans-serif;
+}
+h2{
+text-align: left;
+}
+.btn-info add-new{
+  
+    float: right;
+}
+.table{
+    border-bottom:0px !important;
+    border-collapse: collapse;
+}
+.table-wrapper {
+    background: var(--color-white);
+  width: 90%;
+  border: 1px !important;
+  border-collapse: collapse;
+  color: var(--color-dark-variant);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+.table-title {
+    border: 1px !important;
+padding-bottom: 10px;
+margin: 0 0 10px;
+}
+.table-title h2 {
+    border: 1px !important;
+margin: 6px 0 0;
+font-size: 22px;
+}
+.addTv {
+background-color: orange;
+color:#fff;
+width: 10%;
+top: 30%;
+text-align: center;
+float: right;
+height: 40px;
+font-weight: bold;
+font-size: 15px;
+text-shadow: none;
+min-width: 100px;
+border-radius: 50px;
+line-height: 13px;
+}
+.add-new {
+background-color: orange;
+color:#fff;
+width: 50%;
+text-align: center;
+float: right;
+height: 40px;
+font-weight: bold;
+font-size: 15px;
+text-shadow: none;
+min-width: 100px;
+border-radius: 50px;
+line-height: 13px;
+}
+.table-title .add-new i {
+margin-right: 4px;
+}
+.table-title tbody td{
+  height: 2.8rem;
+  border: 1px !important;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant);
+}
+table.table {
+    border: 1px !important;
+table-layout: fixed;
+}
 
- <link rel="stylesheet" href="css/dash.css"/>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
- <link rel="stylesheet" type="text/css" href="https:////cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+.table.table tr th {
+font-size: 20px;
+font-weight: bold;
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
- <style type="text/css">
-    .hide{
-        top: 0;
-        transform: translate(-50%,-50%) scale(0.1);
-        visibility: hidden;
-    }
-    h1{
-        font-size: 2rem;
-        color: #55B1F0;
-        margin-bottom: 1.2rem;
-    }
-    form input{
-        width: 92%;
-        outline: none;
-        border: 1px solid #fff;
-        padding: 12px 20px;
-        margin-bottom: 10px;
-        border-radius: 20px;
-        background: #e4e4e4;
-
-    }
-    .but{
-        font-size: 1rem;
-        margin-top: 1.8rem;
-        padding: 10px 0;
-        border-radius: 20px;
-        outline: none;
-        border: none;
-        width: 90%;
-        color: #fff;
-        cursor: pointer;
-        background: rgb(17, 107, 143);
-    }
-    .but:hover{
-        background: rgba(17, 107, 143, 0.877);
-    }
-    input:focus{
-        border: 1px solid rgb(192, 192, 192);
-    }
-    .terms{
-        margin-top: 0.2rem;
-
-    }
-    .terms input{
-        height: 1em;
-        width: 1em;
-        vertical-align: middle;
-        cursor: pointer;
-    }
-    .terms label{
-        font-size: 0.7rem;
-    }
+border-color: #204979;
+border: 1px !important;
+}
+.table.table tr td {
+text-align: left;  
+color: #000;
+border-color: #204979;
+border: 1px !important;
+}
+table.table th i {
+font-size: 13px;
+margin: 0 5px;
+cursor: pointer;
+}
+table.table th:last-child {
+width: 100px;
+}
+table.table td a {
+cursor: pointer;
+display: inline-block;
+margin: 0 5px;
+min-width: 24px;
+}
+table.table td a.add {
+color: #27C46B;
+}
+table.table td a.edit {
+color: #FFC107;
+}
+table.table td a.delete {
+color: #E34724;
+}
+table.table td i {
+font-size: 19px;
+}
+table.table td a.add i {
+font-size: 24px;
+margin-right: -1px;
+position: relative;
+top: 3px;
+}
+table.table .form-control {
+height: 32px;
+line-height: 32px;
+box-shadow: none;
+border-radius: 2px;
+}
+table.table .form-control.error {
+border-color: #f50000;
+}
+table.table td .add {
+display: none;
+}
 </style>
+<script type="text/javascript">
+$(document).ready(function(){
+$('[data-toggle="tooltip"]').tooltip();
+var actions = $("table td:last-child").html();
+
+// Delete row on delete button click
+$(document).on("click", ".delete", function(){
+$(this).parents("tr").remove();
+$(".add-new").removeAttr("disabled");
+});
+});
+</script>
 </head>
 <body>
-    <div class="wrapper"> <!--wrapper start-->
+        <!--wrapper start-->
+        <div class="wrapper">
 
-
-        <!--header menu start-->
-        <div class="header">
-            <div class="header-menu">
-                <div class="title"> <img src="./images/baba tv.png" alt="" style="height: 50px;"></div><span></span>
-
-                <div class="search">
-                    <input type="text" placeholder="search here..">
-                    <button type="submit"><img src="images/search.png" alt="" style="width: 50px;"></button>
+            <!--header menu start-->
+            <div class="header">
+                <div class="header-menu">
+                        <div class="title"> <img src="./images/baba tv.png" alt="" style="height: 50px;"></div><span></span>
+                        
+                        <div class="search">
+                            <input type="text" placeholder="search here..">
+                            <button type="submit"><img src="./images/search.png" alt=""></button>
+                        </div>
+                    </div>
+                <div class="sidebar-btn">
+                    <!-- <i class="fas fa-bars"></i> -->
                 </div>
-            </div>
-            <div class="sidebar-btn">
-                <!-- <i class="fas fa-bars"></i> -->
-            </div>
-            <ul>
-
-                <!-- <li><a href="#"><i class="fas fa-power-off"></i></a></li> -->
-            </ul>
-
-        </div>
-
-        <!--header menu end-->
-
-        <!--sidebar start-->
-        <div class="sidebar">
-          <div class="sidebar-menu">
-              <center class="profile">
-                  <!-- <img src="1.jpg" alt=""> -->
-                  <!-- <p>Admin</p> -->
-              </center>
-              <li class="item">
-                  <a href="dashboard.html" class="menu-btn">
-                      <i class="fas fa-tachometer" style='font-size:24px'></i><span>Dashboard</span>
-                  </a>
-              </li>
-              <li class="item" id="users">
-                <a href="#users" class="menu-btn" >
-                    <i class="fa fa-users" style='font-size:24px'></i><span>Users <i class="fas fa-chevron-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu"> 
+                <ul>
     
-                    <a href="users.html"><i class="fa-solid fa-chart-pie"></i><span>View Users</span></a>
-                    <a href="add_user.html"><i class="fa-solid fa-chart-simple"></i><span>Add Admin</span></a>
-                
-                    
-                </div>
-        </li>
-        <li class="item" id="tv">
-          <a href="#tv" class="menu-btn" >
-              <i class="fas fa-television" style='font-size:24px'></i><span>Televison<i class="fas fa-chevron-down drop-down"></i></span>
-          </a>
-          <div class="sub-menu"> 
-
-              <a href="television.html"><i class="fa fa-television" style='font-size:24px'></i><span>Programs Lineup</span></a>
-              <a href="program.html"><i class="fa-solid fa-user-plus" style='font-size:24px'></i><span>Coming Up</span></a>
-              <a href="vod.html"><i class="fa-solid fa-users-line" style='font-size:24px'></i><span>VOD</span></a>
-
-          </div>
-      </li>
-        <li class="item" id="radio">
-                <a href="#radio" class="menu-btn" >
-                    <i class="fa fa-radio" style='font-size:24px'></i><span>Radio <i class="fas fa-chevron-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu"> 
-
-                  <a href="radio.html"><i class="fa fa-television" style='font-size:24px'></i><span>Programs Lineup</span></a>
-                  <a href="program_radio.html"><i class="fa-solid fa-user-plus" style='font-size:24px'></i><span>Coming Up</span></a>
-                  <a href="upload_radio.html"><i class="fa-solid fa-users-line" style='font-size:24px'></i><span>Add Radio</span></a>
-
-              </div>
-              
-        </li>
-              <li class="item" id="analytics">
-                  <a href="analytics.html" class="menu-btn" >
-                      <i class="fas fa-bar-chart" style='font-size:24px'></i><span>Analytics</span>
+                    <!-- <li><a href="#"><i class="fas fa-power-off"></i></a></li> -->
+                </ul>
+    
+            </div>
+    
+            <!--header menu end-->
+    
+            <!--sidebar start-->
+                <div class="sidebar">
+                  <div class="sidebar-menu">
+                      <center class="profile">
+                          <!-- <img src="1.jpg" alt=""> -->
+                          <!-- <p>Admin</p> -->
+                      </center>
+                      <li class="item">
+                          <a href="dashboard.html" class="menu-btn">
+                              <i class="fas fa-tachometer" style='font-size:24px'></i><span>Dashboard</span>
+                          </a>
+                      </li>
+                      <li class="item" id="users">
+                        <a href="#users" class="menu-btn" >
+                            <i class="fa fa-users" style='font-size:24px'></i><span>Users <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu"> 
+            
+                            <a href="users.html"><i class="fa-solid fa-chart-pie"></i><span>View Users</span></a>
+                            <a href="add_user.html"><i class="fa-solid fa-chart-simple"></i><span>Add Admin</span></a>
+                        
+                            
+                        </div>
+                </li>
+                <li class="item" id="tv">
+                  <a href="#tv" class="menu-btn" >
+                      <i class="fas fa-television" style='font-size:24px'></i><span>Televison<i class="fas fa-chevron-down drop-down"></i></span>
                   </a>
                   <div class="sub-menu"> 
-
-                      <a href="#"><i class="fa-solid fa-cart-plus"></i><span>#</span></a>
-                      <a href="#"><i class="fa-solid fa-sack-dollar"></i><span>#</span></a>
-                      <a href="#"><i class="fa-solid fa-hands-holding-child"></i>#<span></span></a>
-                      
+    
+                      <a href="television.html"><i class="fa fa-television" style='font-size:24px'></i><span>Programs Lineup</span></a>
+                      <a href="program.html"><i class="fa-solid fa-user-plus" style='font-size:24px'></i><span>Coming Up</span></a>
+                      <a href="vod.html"><i class="fa-solid fa-users-line" style='font-size:24px'></i><span>VOD</span></a>
+    
                   </div>
+              </li>
+                <li class="item" id="radio">
+                        <a href="#radio" class="menu-btn" >
+                            <i class="fa fa-radio" style='font-size:24px'></i><span>Radio <i class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu"> 
+    
+                          <a href="radio.html"><i class="fa fa-television" style='font-size:24px'></i><span>Programs Lineup</span></a>
+                          <a href="program_radio.html"><i class="fa-solid fa-user-plus" style='font-size:24px'></i><span>Coming Up</span></a>
+                          <a href="upload_radio.html"><i class="fa-solid fa-users-line" style='font-size:24px'></i><span>Add Radio</span></a>
+      
+                      </div>
+                      
+                </li>
+                  
+                  <li class="item" id="analytics">
+                      <a href="analytics.html" class="menu-btn" >
+                          <i class="fas fa-bar-chart" style='font-size:24px'></i><span>Analytics</span>
+                      </a>
+                      <div class="sub-menu"> 
+          
+                          <a href="#"><i class="fa-solid fa-cart-plus"></i><span>#</span></a>
+                          <a href="#"><i class="fa-solid fa-sack-dollar"></i><span>#</span></a>
+                          <a href="#"><i class="fa-solid fa-hands-holding-child"></i>#<span></span></a>
+                          
+                      </div>
               </li>
               <li class="item" id="settings">
                   <a href="settings.html" class="menu-btn" >
                       <i class="fas fa-wrench "style='font-size:24px'></i><span>Settings</span>
                   </a>
                   <div class="sub-menu"> 
-
+      
                       <a href="#"><i class="fa-solid fa-cart-plus"></i><span>#</span></a>
                       <a href="#"><i class="fa-solid fa-sack-dollar"></i><span>#</span></a>
                       <a href="#"><i class="fa-solid fa-hands-holding-child"></i>#<span></span></a>
-
+                      
                   </div>
-              </li>
-              <li class="item" id="help">
-                  <a href="help.html" class="menu-btn" >
-                      <i class="    fas fa-hand-holding-medical" style='font-size:24px'></i><span>Help</span>
-                  </a>
-                  <div class="sub-menu"> 
-
-                      <a href="#"><i class="fa-solid fa-cart-plus"></i><span>#</span></a>
-                      <a href="#"><i class="fa-solid fa-sack-dollar"></i><span>#</span></a>
-                      <a href="#"><i class="fa-solid fa-hands-holding-child"></i>#<span></span></a>
-
+          </li>
+          <li class="item" id="help">
+              <a href="help.html" class="menu-btn" >
+                  <i class="    fas fa-hand-holding-medical" style='font-size:24px'></i><span>Help</span>
+              </a>
+              <div class="sub-menu"> 
+    
+                  <a href="#"><i class="fa-solid fa-cart-plus"></i><span>#</span></a>
+                  <a href="#"><i class="fa-solid fa-sack-dollar"></i><span>#</span></a>
+                  <a href="#"><i class="fa-solid fa-hands-holding-child"></i>#<span></span></a>
+                  
+              </div>
+      </li>
                   </div>
-              </li>
-          </div>
-      </div>
-      <!--            end of sidebar-->
-
-      <div class="main-container">
+              </div>
+    <!--            end of sidebar-->
+    <div class="main-container">
         <main>
-            <div class="search">
-                <input type="text" placeholder="search here..">
-                <button type="submit"><img src="images/search.png" alt=""></button>
-            </div>
-            <div class="order" style=" background-color:#204979; padding:5px; border-radius:20px">
-                <h2>Coming Up</h2>
-                <table id="myTable">
-                    <thead>
+<div class="container">
+<div class="table-wrapper">
+<div class="table-title">
+<div class="row">
+    <h2>Coming up</h2><a href="vod.html"><button  type="button" class="addTv"><i class="fa fa-plus"></i> Add New</button></a>
 
-                        <tr>
-                            <th>Names</th>
-                            <th>Details</th>
-                            <th>URL</th>
-                            <th>Image</th>
-                            
-
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            
-                            <td><div class="center">
-                                <button id="show-login">View Details</button>
-                            </div></td>
-
-
-
-
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            
-                            <td> <div class="center">
-                                <button id="show-login">View Details</button>
-                            </div>
-                        </td>
-
-
-
-                    </tr>
-                    <tr>
-                        <td>get values in database</td>
-                        <td>get values in database</td>
-                        <td>get values in database</td>
-                        
-                        <td><div class="center">
-                            <button id="show-login">View Details</button>
-                        </div>
-                    </td>
+</div>
+</div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>ID</th>  
+<th>Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>Password</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+        <td>get values in database</td>
+        <td>get values in database</td>
+        <td>get values in database</td>
+        <td>get values in database</td>
+        <td>get values in database</td>
+        <td>
+            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> --> 
+            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+    
+    
+    
+    </tr>
+<tr>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>
+        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> --> 
+        <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+        <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        </td>
 
 
 
-                </tr>
-                <tr>
-                    <td>get values in database</td>
-                    <td>get values in database</td>
-                    <td>get values in database</td>
-                    
-                    <td>    <div class="center">
-                        <button id="show-login">View Details</button>
-                    </div>
-                </td>
+</tr>
+<tr>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>
+        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> --> 
+        <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+        <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        </td>
 
 
 
-            </tr>
-            <tr>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                
+</tr>
 
-                <td> <div class="center">
-                    <button id="show-login">View Details</button>
-                </div></td>
-
-
-
-            </tr>
-            <tr>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                <td>get values in database</td>
-              
-                <td> <div class="center">
-                    <button id="show-login">View Details</button>
-                </div></td>
+<tr>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>
+        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+        <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+        <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        </td>
 
 
 
-            </tr>
-            <tr>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                
-                <td> <div class="center">
-                    <button id="show-login">View Details</button>
-                </div></td>
+</tr>
+<tr>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>
+        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+        <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+        <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        </td>
 
 
 
-            </tr>
-            <tr>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                
-                <td> <div class="center">
-                    <button id="show-login">View Details</button>
-                </div></td>
+</tr>
+<tr>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>
+        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+        <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+        <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        </td>
 
 
 
-            </tr>
-            <tr>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                <td>get values in database</td>
-                
-                <td> <div class="center">
-                    <button id="show-login">View Details</button>
-                </div></td>
+</tr>
+<tr>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>
+        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+        <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+        <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        </td>
 
 
 
-            </tr>
+</tr>
+<tr>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>get values in database</td>
+    <td>
+        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+        <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+        <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        </td>
 
 
-        </tbody> 
-    </table>
 
-    <div id="popup" class="popup1 hide" style="height: 600px; width: 600px; background-color: white; box-shadow: 2px 2px 3px #aaa; z-index: 15; position: absolute; top: 105%; left: 40%;transition: transform 0.4s, top 0.4s;" >
-        <h1>Sign Up</h1>
-        <form action="#" method="post">
-            <input type="text" name="email" placeholder="Email" required>
-            <input type="text"  name="username" placeholder="Username" required>
-            <input type="text"  name="name" placeholder="Name" required>
-            <input type="password"  name="pass" placeholder="Password" required>
-            <a href="dash.html"> <button class="but">Sign up</button></a>
+</tr>
 
-        </form>
-
-    </div>
-
+</tbody>
+</table>
+</div>
 </div>
 </main>
 </div>
-</div>
-<script>
-                      //adding on click event to div which pops up. when you click it, it disaapears
-  document.getElementById('popup').addEventListener('click',function(){
-      this.classList.add('hide');
-  })
-  
-                     //getting all buttons on this page
-  btns=document.querySelectorAll('button');
-  
-                      //putting onclick fnction on all buttoins except the one with search icon
-  for (var i = btns.length - 1; i >= 1; i--) {
-      btns[i].addEventListener('click',function(){
-          document.getElementById('popup').classList.remove('hide')
-      })
-  }
-</script>
-<script type="text/javascript" src="https:////cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript">
-  $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
-</script>
-
-<script src="graphs/chart.min.js"></script>
-<script src="graphs/Chart1.js"></script>
-<script src="graphs/Chart3.js"></script>
-
-
-
+<script src="js/upload.js"></script>
+<!-- </script> -->
 </body>
-</html>
+</html> 

@@ -318,14 +318,16 @@
  main .sight{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.6rem;
+    gap: 2.6rem;
   }
 
    main .sight > div{
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
-    margin-top: 1rem;
+    margin-top: 3rem;
+    height: 230px;
+    width: 110%;
     color: var(--color-graph-title);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
@@ -335,16 +337,18 @@
     box-shadow: none;
   }
    main .sight > div span{
-    background: var(--color-primary);
+    background: var(--color-dark-variant);
     padding: 0.5rem;
     border-radius: 50%;
     color: #f4ad65;
     font-size: 2rem;
+   
   }
 
 
    main .sight > div.sales span{
     background: var(--btn_back_color);
+    
   } 
 
   main .sight > div.listeners span{

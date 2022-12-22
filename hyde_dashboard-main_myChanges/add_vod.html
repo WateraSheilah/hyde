@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <!--  authetication start-->
-      <script type = "text/javascript" >
-        function preback() {window.history.forward();}
-        setTimeout("preback()", 0);
-        window.onunload = function(){null;};
-        </script>
-        <!--  authetication end-->
- 
-         <meta charset="utf-8">
-         <title>BABA TV</title>
-         <link rel="stylesheet" href="css/dash.css"/>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"> 
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/dash.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <title>Upload</title>
+
+
 </head>
 <body>
     <div class="wrapper"> <!--wrapper start-->
-     
-         
-          <!--header menu start-->
-          <div class="header">
-              <div class="header-menu">
-                <div class="title"> <img src="./images/baba tv.png" alt="" style="height: 50px;"></div><span></span>
-                  
-                  <div class="search">
-                      <input type="text" placeholder="search here..">
-                      <button type="submit"><img src="images/search.png" alt=""></button>
-                  </div>
+
+
+      <!--header menu start-->
+      <div class="header">
+          <div class="header-menu">
+            <div class="title"> <img src="./images/baba tv.png" alt="" style="height: 50px;"></div><span></span>
+              
+              <div class="search">
+                  <input type="text" placeholder="search here..">
+                  <button type="submit"><img src="images/search.png" alt=""></button>
               </div>
-                  <div class="sidebar-btn">
-                      <!-- <i class="fas fa-bars"></i> -->
-                  </div>
-                  <ul>
-                  
-                      <!-- <li><a href="#"><i class="fas fa-power-off"></i></a></li> -->
-                  </ul>
-                  
-              </div>
-        
-          <!--header menu end-->
-          
-                      <!--sidebar start-->
+          </div>
+          <div class="sidebar-btn">
+              <!-- <i class="fas fa-bars"></i> -->
+          </div>
+          <ul>
+
+              <!-- <li><a href="#"><i class="fas fa-power-off"></i></a></li> -->
+          </ul>
+
+      </div>
+
+      <!--header menu end-->
+      
+            <!--sidebar start-->
             <div class="sidebar">
               <div class="sidebar-menu">
                   <center class="profile">
@@ -130,99 +126,75 @@
               </div>
           </div>
 <!--            end of sidebar-->
-      
-         <div class="main-container">
-            <main>
-                
-                <div class="graph">
-                    <div class="box"> 
-                        <h2>CATEGORY VIEWS</h2>
-                       
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    
-                        <div class="box">   
-                            <h2>MONTHLY VIEWS</h2>
-                        <canvas id="bar"></canvas>
-                        </div>
-                        <div class="box"> 
-                            <h2>CATEGORY VIEWS</h2>
-                           
-                            <canvas id="Chart"></canvas>
-                        </div>
-                        
-                            <div class="box">   
-                                <h2>MONTHLY VIEWS</h2>
-                            <canvas id="my"></canvas>
-                            </div>
+    <div class="main-container" style=" background-color: #D8DDE3">
+
+        <main>
+            <h2 ><i class="fa fa-arrow-left"></i><a style="color: #A19392;"href="vod.html">Back</a></h2><br>
+          <div class="upload">
+            <h1>Add VOD</h1>
+              <!-- <div class="row">
+                  <div class="col-3 left">
+                      <label for="category">Category</label>
+                  </div>
+                  <div class="col-9 left">
+                      <select name="category">
+                          <option>--select Category--</option>
+                          <option>category 2</option>
+                          <option>category 3</option>
+                      </select>
+                  </div>    
+              </div> -->
+              <div class="row">
+                  <div class="col-3 left">
+                      <label for="Video-Title">Video Name</label>
+                  </div>
+                  <div class="col-9 left">
+                      <input type="text" name="vidTitle" placeholder="Enter Video Type">
+                  </div>
+              </div>
+              <!-- <div class="row">
+                  <div class="col-3 left">
+                      <label for="vidType">Video Type</label>
+                  </div>
+                  <div class="col-9 left">
+                      <select name="vidType">
+                          <option>--select Video Type--</option>
+                          <option>type 2</option>
+                          <option>type 3</option>
+                      </select>
+                  </div>
+              </div> -->
+              <div class="row">
+                  <div class="col-3 left">
+                      <label for="vidURL">Video URL</label>
+                  </div>
+                  <div class="col-9 left">
+                     <input type="text" name="vidURL" placeholder="Paste URL here">
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-3 left">
+                    <label for="vidURL">Video Image</label>
                 </div>
-            </main>
-        </div>
-    </div>
+                <div class="col-9 left">
+                   <input type="text" name="vidURL" placeholder="Paste URL here">
+                </div>
+            </div>
+              <div class="row">
+                  <div class="col-3 left">
+                      <label for="desc">Video Description</label>
+                  </div>
+                  <div class="col-9 left" style="height: 200px;">
+                    <textarea>hello</textarea>
+                  </div>
+              </div>
+              <br><br><br><br><br><br><br>
+           
+          </div>
 
+      </main>
+  </div>
+</div>
 
-    </script>
-    <script src="graphs/chart.min.js"></script>
-        <script src="graphs/Chart1.js"></script>
-        <script src="graphs/Chart3.js"></script>
-
-        <script>
-           var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
-var barColors = [
-  "#FF8300",
-  "#0000D1",
-  "#41f1b6",
-  "#e8c3b9",
-  "#1e7145"
-];
-
-new Chart("my", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "World Wide Wine Production 2018"
-    }
-  }
-});
-    
-        </script>
-       <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = [
-          "#FF8300",
-          "#0000D1",
-          "#41f1b6",
-          "#e8c3b9",
-          "#1e7145"
-        ];
-        
-        new Chart("Chart", {
-          type: "doughnut",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "World Wide Wine Production 2018"
-            }
-          }
-        });
-        </script>
-        
 </body>
 </html>

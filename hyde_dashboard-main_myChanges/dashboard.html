@@ -19,58 +19,157 @@
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
  <style type="text/css">
-    .hide{
-        top: 0;
-        transform: translate(-50%,-50%) scale(0.1);
-        visibility: hidden;
+    body {
+    color: #404E67;
+    /* background: blue; */
+    font-family: 'Open Sans', sans-serif;
     }
-    h1{
-        font-size: 2rem;
-        color: #55B1F0;
-        margin-bottom: 1.2rem;
+    h2{
+    text-align: left;
     }
-    form input{
-        width: 92%;
-        outline: none;
-        border: 1px solid #fff;
-        padding: 12px 20px;
-        margin-bottom: 10px;
-        border-radius: 20px;
-        background: #e4e4e4;
-
+    .btn-info add-new{
+      
+        float: right;
     }
-    .but{
-        font-size: 1rem;
-        margin-top: 1.8rem;
-        padding: 10px 0;
-        border-radius: 20px;
-        outline: none;
-        border: none;
-        width: 90%;
-        color: #fff;
-        cursor: pointer;
-        background: rgb(17, 107, 143);
+    .table{
+        border-bottom:0px !important;
+        border-collapse: collapse;
     }
-    .but:hover{
-        background: rgba(17, 107, 143, 0.877);
+    .table-wrapper {
+        background: var(--color-white);
+      width: 90%;
+      border: 1px !important;
+      border-collapse: collapse;
+      color: var(--color-dark-variant);
+      border-radius: var(--card-border-radius);
+      padding: var(--card-padding);
+      text-align: center;
+      box-shadow: var(--box-shadow);
+      transition: all 300ms ease;
     }
-    input:focus{
-        border: 1px solid rgb(192, 192, 192);
+    .table-title {
+        border: 1px !important;
+    padding-bottom: 10px;
+    margin: 0 0 10px;
     }
-    .terms{
-        margin-top: 0.2rem;
-
+    .table-title h2 {
+        border: 1px !important;
+    margin: 6px 0 0;
+    font-size: 22px;
     }
-    .terms input{
-        height: 1em;
-        width: 1em;
-        vertical-align: middle;
-        cursor: pointer;
+    .addTv {
+    background-color: orange;
+    color:#fff;
+    width: 10%;
+    top: 30%;
+    text-align: center;
+    float: right;
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: none;
+    min-width: 100px;
+    border-radius: 50px;
+    line-height: 13px;
     }
-    .terms label{
-        font-size: 0.7rem;
+    .add-new {
+    background-color: orange;
+    color:#fff;
+    width: 50%;
+    text-align: center;
+    float: right;
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: none;
+    min-width: 100px;
+    border-radius: 50px;
+    line-height: 13px;
     }
-</style>
+    .table-title .add-new i {
+    margin-right: 4px;
+    }
+    .table-title tbody td{
+      height: 2.8rem;
+      border: 1px !important;
+      border-bottom: 1px solid var(--color-light);
+      color: var(--color-dark-variant);
+    }
+    table.table {
+        border: 1px !important;
+    table-layout: fixed;
+    }
+    
+    .table.table tr th {
+    font-size: 20px;
+    font-weight: bold;
+    
+    border-color: #204979;
+    border: 1px !important;
+    }
+    .table.table tr td {
+    text-align: left;  
+    color: #000;
+    border-color: #204979;
+    border: 1px !important;
+    }
+    table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+    }
+    table.table th:last-child {
+    width: 100px;
+    }
+    table.table td a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 24px;
+    }
+    table.table td a.add {
+    color: #27C46B;
+    }
+    table.table td a.edit {
+    color: #FFC107;
+    }
+    table.table td a.delete {
+    color: #E34724;
+    }
+    table.table td i {
+    font-size: 19px;
+    }
+    table.table td a.add i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+    }
+    table.table .form-control {
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 2px;
+    }
+    table.table .form-control.error {
+    border-color: #f50000;
+    }
+    table.table td .add {
+    display: none;
+    }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    var actions = $("table td:last-child").html();
+    
+    // Delete row on delete button click
+    $(document).on("click", ".delete", function(){
+    $(this).parents("tr").remove();
+    $(".add-new").removeAttr("disabled");
+    });
+    });
+    </script>
 </head>
 <body>
 
@@ -131,7 +230,7 @@
 
                   <a href="television.html"><i class="fa fa-television" style='font-size:24px'></i><span>Programs Lineup</span></a>
                   <a href="program.html"><i class="fa-solid fa-user-plus" style='font-size:24px'></i><span>Coming Up</span></a>
-                  <a href="upload.html"><i class="fa-solid fa-circle-plus" style='font-size:24px'></i><span>VOD</span></a>
+                  <a href="upload.html"><i class="fa-solid fa-users-line" style='font-size:24px'></i><span>Add Tv</span></a>
 
               </div>
           </li>
@@ -190,7 +289,7 @@
 <!--            end of sidebar-->
       <div class="main-container">
         <main>
-            <h1>Dashboard</h1>
+            <h2>Dashboard</h2>
             <div class="date">
              <input type="date">
          </div>
@@ -344,136 +443,156 @@
             <!-- end OF ADD CHart -->
             <!-- Start of Orders -->
             <div class="order" style=" background-color:#204979; padding:5px; border-radius:20px">
-                <h2>Current Shows</h2>
-                <table id="myTable">
+                <div class="container">
+                    <div class="table-wrapper">
+                    <div class="table-title">
+                    <div class="row">
+                        <h2>Coming up</h2>
+                    
+                    </div>
+                    </div>
+                    <table class="table table-bordered">
                     <thead>
-
-                        <tr>
-                            <th>Names</th>
-                            <th>Email</th>
-                            <th>Location</th>
-                            <th>Bandwidth</th>
-                            <th>Details</th>
-                            
-                        </tr>
+                    <tr>
+                    <th>ID</th>  
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                    </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>get values in database</td>
+                            <td>get values in database</td>
+                            <td>get values in database</td>
+                            <td>get values in database</td>
+                            <td>get values in database</td>
+                            <td>
+                                <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> --> 
+                                <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                </td>
+                        
+                        
+                        
+                        </tr>
+                    <tr>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> --> 
+                            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                    
+                    
+                    
+                    </tr>
+                    <tr>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> --> 
+                            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                    
+                    
+                    
+                    </tr>
+                    
+                    <tr>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+                            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                    
+                    
+                    
+                    </tr>
+                    <tr>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+                            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                    
+                    
+                    
+                    </tr>
+                    <tr>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+                            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                    
+                    
+                    
+                    </tr>
+                    <tr>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+                            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                    
+                    
+                    
+                    </tr>
+                    <tr>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>get values in database</td>
+                        <td>
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>  -->
+                            <a href="upload.html" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a onclick="fireSweetAlert()" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                    
+                    
+                    
+                    </tr>
+                    
+                    </tbody>
+                    </table>
+                    </div>
+                    </div>
+            </div>
+        
 
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td>get values in database</td>
-                            <td><div class="center">
-                                <button >View Details</button>
-                            </div></td>
-                        </tr>
-                    </tbody> 
-                </table>
-                <div id="popup" class="popup1 hide" style="height: 600px; width: 600px; background-color: white; box-shadow: 2px 2px 3px #aaa; z-index: 15; position: absolute; top: 105%; left: 40%;transition: transform 0.4s, top 0.4s; padding: 40px;" >
-                  <h1>Sign Up</h1>
-                  <form action="#" method="post">
-                      <input type="text" name="email" placeholder="Email" required>
-                      <input type="text"  name="username" placeholder="Username" required>
-                      <input type="text"  name="name" placeholder="Name" required>
-                      <input type="password"  name="pass" placeholder="Password" required>
-                      <a href="dash.html"> <button class="but">Sign up</button></a>
-                      
-                  </form>
-
-              </div>
-
-          </div>
+          
       </main>
   </div>
 </div>
@@ -503,7 +622,7 @@
 <script src="graphs/chart.min.js"></script>
 <script src="graphs/Chart1.js"></script>
 <script src="graphs/Chart3.js"></script>
-
+<script src="js/upload.js"></script>
 
 
 </body>
