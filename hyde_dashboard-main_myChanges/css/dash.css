@@ -221,6 +221,7 @@
   .wrapper .sidebar .sidebar-menu .item .sub-menu{
     background: #fff;
     overflow: hidden;
+    margin-left: 20px;
     max-height: 0;
     transition: 0.3s;
     transition-property: background, max-height;
@@ -234,6 +235,7 @@
     font-size: 15px;
     padding: 20px;
     transition: 0.3s;
+    margin-left: 20px;
     transition-property: background;
   }
   
@@ -324,7 +326,7 @@
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
-    color: val(--color-graph-title);
+    color: var(--color-graph-title);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
   }
@@ -462,6 +464,7 @@ main .sight h3{
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
   text-align: center;
+  
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
 }

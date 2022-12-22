@@ -12,9 +12,42 @@
          <meta charset="utf-8">
          <title>BABA TV</title>
          <link rel="stylesheet" href="css/dash.css"/>
+         
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"> 
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+         <style>
+            .addTv {
+background-color: orange;
+color:#fff;
+/* width: 10%; */
+top: 30%;
+text-align: center;
+float: right;
+height: 40px;
+font-weight: bold;
+font-size: 15px;
+text-shadow: none;
+min-width: 100px;
+border-radius: 50px;
+line-height: 13px;
+}
+            .vod h2{
+                font-size: 30px;
+                color: #366c91;
+                /* background-color: yellow; */
+
+            }
+            .vod h4{
+                font-size: 18px;
+                color: #366c91;
+                float: right;
+
+            }
+            .vod a i {
+            float: right;
+            }
+         </style>
 </head>
 <body>
     <div class="wrapper"> <!--wrapper start-->
@@ -74,7 +107,7 @@
 
                   <a href="television.html"><i class="fa fa-television" style='font-size:24px'></i><span>Programs Lineup</span></a>
                   <a href="program.html"><i class="fa-solid fa-user-plus" style='font-size:24px'></i><span>Coming Up</span></a>
-                  <a href="upload.html"><i class="fa-solid fa-users-line" style='font-size:24px'></i><span>VOD</span></a>
+                  <a href="upload.html"><i class="fa-solid fa-video-plus" style='font-size:24px'></i><span>VOD</span></a>
 
               </div>
           </li>
@@ -133,96 +166,86 @@
       
          <div class="main-container">
             <main>
-                
-                <div class="graph">
-                    <div class="box"> 
-                        <h2>CATEGORY VIEWS</h2>
-                       
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    
-                        <div class="box">   
-                            <h2>MONTHLY VIEWS</h2>
-                        <canvas id="bar"></canvas>
-                        </div>
-                        <div class="box"> 
-                            <h2>CATEGORY VIEWS</h2>
-                           
-                            <canvas id="Chart"></canvas>
-                        </div>
-                        
-                            <div class="box">   
-                                <h2>MONTHLY VIEWS</h2>
-                            <canvas id="my"></canvas>
-                            </div>
+                <div class="vod">
+                    <h2>Video On Demand</h2>
+                    <a href="upload.html"><button  type="button" class="addTv"><i class="fa fa-plus"></i> Add Tv</button></a>
+                    <!-- <a href="upload.html"><button  class="addTv"><i class="fa-solid fa-circle-plus" style='font-size:24px'></i>Add</button></a> -->
                 </div>
-            </main>
-        </div>
-    </div>
-
-
-    </script>
-    <script src="graphs/chart.min.js"></script>
-        <script src="graphs/Chart1.js"></script>
-        <script src="graphs/Chart3.js"></script>
-
-        <script>
-           var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
-var barColors = [
-  "#FF8300",
-  "#0000D1",
-  "#41f1b6",
-  "#e8c3b9",
-  "#1e7145"
-];
-
-new Chart("my", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "World Wide Wine Production 2018"
-    }
-  }
-});
+                
+             <div class="sight">
     
-        </script>
-       <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = [
-          "#FF8300",
-          "#0000D1",
-          "#41f1b6",
-          "#e8c3b9",
-          "#1e7145"
-        ];
-        
-        new Chart("Chart", {
-          type: "doughnut",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "World Wide Wine Production 2018"
-            }
-          }
-        });
-        </script>
-        
-</body>
-</html>
+    
+                <!-- START OF SALES -->
+                <div class="sales">
+                    <!-- <span><i class="fa-solid fa-cart-plus"></i></span> -->
+                    <div class="mid">
+                     <div class="left">
+                        
+                   </div>
+                   <div class="gress">
+    
+                      <div class="num">
+                         <p></p>
+                     </div>
+                 </div>
+             </div>
+             <!-- <small class="text-muted">Update Last 24 Hours</small> -->
+         </div>
+         <!-- END OF SALES -->
+              <!-- START OF SALES -->
+              <div class="sales">
+                <!-- <span><i class="fa-solid fa-cart-plus"></i></span> -->
+                <div class="mid">
+                 <div class="left">
+                    
+               </div>
+               <div class="gress">
+
+                  <div class="num">
+                     <p></p>
+                 </div>
+             </div>
+         </div>
+         <!-- <small class="text-muted">Update Last 24 Hours</small> -->
+     </div>
+     <!-- END OF SALES -->
+          <!-- START OF SALES -->
+          <div class="sales">
+            <!-- <span><i class="fa-solid fa-cart-plus"></i></span> -->
+            <div class="mid">
+             <div class="left">
+                
+           </div>
+           <div class="gress">
+
+              <div class="num">
+                 <p></p>
+             </div>
+         </div>
+     </div>
+     <!-- <small class="text-muted">Update Last 24 Hours</small> -->
+ </div>
+ <!-- END OF SALES -->
+      <!-- START OF SALES -->
+      <div class="sales">
+        <!-- <span><i class="fa-solid fa-cart-plus"></i></span> -->
+        <div class="mid">
+         <div class="left">
+            
+       </div>
+       <div class="gress">
+
+          <div class="num">
+             <p></p>
+         </div>
+     </div>
+ </div>
+ <!-- <small class="text-muted">Update Last 24 Hours</small> -->
+</div>
+
+<!-- END OF SALES -->
+                </main>
+            </div>
+         </div>
+        </body>
+        </html>
